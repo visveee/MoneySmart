@@ -1,4 +1,4 @@
-##### Money Manager: A Personal Finance iOS App
+#### Money Manager: A Personal Finance iOS App
 
 Video Demo: [URL HERE]
 
