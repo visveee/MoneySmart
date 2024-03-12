@@ -16,6 +16,8 @@
 		0C3FE0602BA02144008873B0 /* CS50_Final_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3FE05F2BA02144008873B0 /* CS50_Final_ProjectUITestsLaunchTests.swift */; };
 		0C3FE06D2BA02274008873B0 /* InvestmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3FE06C2BA02274008873B0 /* InvestmentsViewController.swift */; };
 		0C3FE06F2BA022BF008873B0 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3FE06E2BA022BF008873B0 /* AuthenticationManager.swift */; };
+		0C3FE0712BA12B3E008873B0 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3FE0702BA12B3E008873B0 /* ChartsViewController.swift */; };
+		0C3FE0732BA12B54008873B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3FE0722BA12B54008873B0 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		0C3FE05F2BA02144008873B0 /* CS50_Final_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS50_Final_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0C3FE06C2BA02274008873B0 /* InvestmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentsViewController.swift; sourceTree = "<group>"; };
 		0C3FE06E2BA022BF008873B0 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		0C3FE0702BA12B3E008873B0 /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		0C3FE0722BA12B54008873B0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				0C3FE0442BA02142008873B0 /* ContentView.swift */,
 				0C3FE06C2BA02274008873B0 /* InvestmentsViewController.swift */,
 				0C3FE06E2BA022BF008873B0 /* AuthenticationManager.swift */,
+				0C3FE0702BA12B3E008873B0 /* ChartsViewController.swift */,
+				0C3FE0722BA12B54008873B0 /* MainViewController.swift */,
 				0C3FE0462BA02144008873B0 /* Assets.xcassets */,
 				0C3FE0482BA02144008873B0 /* Preview Content */,
 			);
@@ -264,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C3FE06D2BA02274008873B0 /* InvestmentsViewController.swift in Sources */,
+				0C3FE0712BA12B3E008873B0 /* ChartsViewController.swift in Sources */,
 				0C3FE06F2BA022BF008873B0 /* AuthenticationManager.swift in Sources */,
+				0C3FE0732BA12B54008873B0 /* MainViewController.swift in Sources */,
 				0C3FE0452BA02142008873B0 /* ContentView.swift in Sources */,
 				0C3FE0432BA02142008873B0 /* CS50_Final_ProjectApp.swift in Sources */,
 			);
