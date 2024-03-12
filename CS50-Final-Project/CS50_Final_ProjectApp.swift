@@ -15,3 +15,4 @@ struct CS50_Final_ProjectApp: App {
         }
     }
 }
+
