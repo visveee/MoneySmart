@@ -10,13 +10,63 @@ import CoreData
 
 class MainViewController: UIViewController {
     
+    // IBOutlets for displaying/editing values
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var isActiveSwitch: UISwitch!
+    @IBOutlet weak var interestsTextView: UITextView!
+    @IBOutlet weak var lastLoginLabel: UILabel!
+    
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            // Update UI elements with initial values
+            usernameLabel.text = username
+            ageTextField.text = String(age)
+            balanceLabel.text = String(format: "$%.2f", balance)
+            isActiveSwitch.isOn = isActive
+            interestsTextView.text = interests.joined(separator: ", ")
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM dd, yyyy hh:mm:ss"
+            lastLoginLabel.text = dateFormatter.string(from: lastLogin)
+        }
+        
+        // IBAction for updating age variable when text field value changes
+        @IBAction func ageTextFieldDidChange(_ sender: UITextField) {
+            if let text = sender.text, let newAge = Int(text) {
+                age = newAge
+            }
+        }
+        
+        // IBAction for toggling isActive variable when switch value changes
+        @IBAction func isActiveSwitchDidChange(_ sender: UISwitch) {
+            isActive = sender.isOn
+        }
+        
+        // IBAction for updating interests variable when text view value changes
+        @IBAction func interestsTextViewDidChange(_ sender: UITextView) {
+            if let text = sender.text {
+                interests = text.components(separatedBy: ", ")
+            }
+        }
+    }
+
     // MARK: - Properties
     
+    var username: String = "JohnDoe"
+    var age: Int = 30
+    var balance: Double = 1500.50
+    var isActive: Bool = true
+    var interests: [String] = ["Reading", "Traveling", "Cooking"]
+    var lastLogin: Date = Date()
     var expenses: [Expense] = []
     var budgets: [Budget] = []
     var incomes: [Income] = []
-    
-    lazy var managedObjectContext: NSManagedObjectContext = {
+
+    var managedObjectContext: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("Unable to access AppDelegate")
         }
@@ -30,6 +80,7 @@ class MainViewController: UIViewController {
         fetchInitialData()
         configureUI()
     }
+
     
     // MARK: - Private Methods
     
@@ -54,10 +105,11 @@ class MainViewController: UIViewController {
             print("Error fetching expenses: \(error.localizedDescription)")
         }
     }
+
     
     func addExpense(_ amount: Double, category: String, note: String?) {
         let newExpense = Expense(context: managedObjectContext)
-        newExpense.amount = amount
+        newExpense.amount = NSDecimalNumber(value: amount)
         newExpense.category = category
         newExpense.timestamp = Date()
         newExpense.note = note
@@ -98,7 +150,7 @@ class MainViewController: UIViewController {
     func addBudget(_ category: String, limit: Double) {
         let newBudget = Budget(context: managedObjectContext)
         newBudget.category = category
-        newBudget.limit = limit
+        newBudget.limit = NSDecimalNumber(value: limit)
         
         do {
             try managedObjectContext.save()
@@ -135,7 +187,7 @@ class MainViewController: UIViewController {
     
     func addIncome(_ amount: Double, source: String) {
         let newIncome = Income(context: managedObjectContext)
-        newIncome.amount = amount
+        newIncome.amount = NSDecimalNumber(value: amount)
         newIncome.source = source
         newIncome.timestamp = Date()
         
@@ -163,4 +215,19 @@ class MainViewController: UIViewController {
     
     // Additional methods for handling user interactions, navigation, etc.
     
-}
+    // MARK: - User Interaction Examples
+    
+    @IBAction func addExpenseButtonTapped(_ sender: UIButton) {
+        // Example of adding an expense
+        addExpense(50.0, category: "Food", note: "Lunch with friends")
+    }
+    
+    @IBAction func deleteExpenseButtonTapped(_ sender: UIButton) {
+        // Example of deleting an expense
+        guard !expenses.isEmpty else {
+            return
+        }
+        deleteExpense(at: 0)
+    }
+    
+    // Additional IBActions for other user interactions
