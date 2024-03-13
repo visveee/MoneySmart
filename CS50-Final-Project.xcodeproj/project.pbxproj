@@ -20,6 +20,8 @@
 		0C3FE0732BA12B54008873B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3FE0722BA12B54008873B0 /* MainViewController.swift */; };
 		0C3FE0752BA130D9008873B0 /* CoreDataEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3FE0742BA130D9008873B0 /* CoreDataEntities.swift */; };
 		0C3FE0772BA13192008873B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3FE0762BA13192008873B0 /* AppDelegate.swift */; };
+		0C3FE0792BA14F9A008873B0 /* InvestmentManagerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3FE0782BA14F9A008873B0 /* InvestmentManagerAPI.swift */; };
+		0C3FE07B2BA17628008873B0 /* AppStructure in Resources */ = {isa = PBXBuildFile; fileRef = 0C3FE07A2BA17628008873B0 /* AppStructure */; };
 		B644372F754B91BD9957DFC6 /* Pods_CS50_Final_Project_CS50_Final_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48FE88AFCD94677B8B26246 /* Pods_CS50_Final_Project_CS50_Final_ProjectUITests.framework */; };
 		CCF9214F745C61C5A5EEB0BE /* Pods_CS50_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D24937E61B36C65C44710F5B /* Pods_CS50_Final_Project.framework */; };
 		E7A1394FA9A1C7ADD0EE2542 /* Pods_CS50_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9F9EF76539FE0A794C24DB /* Pods_CS50_Final_ProjectTests.framework */; };
@@ -59,6 +61,8 @@
 		0C3FE0722BA12B54008873B0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0C3FE0742BA130D9008873B0 /* CoreDataEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEntities.swift; sourceTree = "<group>"; };
 		0C3FE0762BA13192008873B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0C3FE0782BA14F9A008873B0 /* InvestmentManagerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentManagerAPI.swift; sourceTree = "<group>"; };
+		0C3FE07A2BA17628008873B0 /* AppStructure */ = {isa = PBXFileReference; lastKnownFileType = text; path = AppStructure; sourceTree = "<group>"; };
 		28B21D56936910EBC80837B3 /* Pods-CS50-Final-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS50-Final-Project.release.xcconfig"; path = "Target Support Files/Pods-CS50-Final-Project/Pods-CS50-Final-Project.release.xcconfig"; sourceTree = "<group>"; };
 		7769BDB09E0AF771D080E05D /* Pods-CS50-Final-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS50-Final-Project.debug.xcconfig"; path = "Target Support Files/Pods-CS50-Final-Project/Pods-CS50-Final-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		7E5B6F95E01155217827FFB1 /* Pods-CS50-Final-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS50-Final-ProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-CS50-Final-ProjectTests/Pods-CS50-Final-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,13 +128,15 @@
 			isa = PBXGroup;
 			children = (
 				0C3FE0422BA02142008873B0 /* CS50_Final_ProjectApp.swift */,
+				0C3FE0762BA13192008873B0 /* AppDelegate.swift */,
 				0C3FE0442BA02142008873B0 /* ContentView.swift */,
 				0C3FE06C2BA02274008873B0 /* InvestmentsViewController.swift */,
 				0C3FE06E2BA022BF008873B0 /* AuthenticationManager.swift */,
 				0C3FE0702BA12B3E008873B0 /* ChartsViewController.swift */,
 				0C3FE0722BA12B54008873B0 /* MainViewController.swift */,
-				0C3FE0762BA13192008873B0 /* AppDelegate.swift */,
+				0C3FE0782BA14F9A008873B0 /* InvestmentManagerAPI.swift */,
 				0C3FE0742BA130D9008873B0 /* CoreDataEntities.swift */,
+				0C3FE07A2BA17628008873B0 /* AppStructure */,
 				0C3FE0462BA02144008873B0 /* Assets.xcassets */,
 				0C3FE0482BA02144008873B0 /* Preview Content */,
 			);
@@ -182,7 +188,6 @@
 				7E5B6F95E01155217827FFB1 /* Pods-CS50-Final-ProjectTests.debug.xcconfig */,
 				B41333F320BA5B3462B9B5F5 /* Pods-CS50-Final-ProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -296,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C3FE04A2BA02144008873B0 /* Preview Assets.xcassets in Resources */,
+				0C3FE07B2BA17628008873B0 /* AppStructure in Resources */,
 				0C3FE0472BA02144008873B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +435,7 @@
 				0C3FE06D2BA02274008873B0 /* InvestmentsViewController.swift in Sources */,
 				0C3FE0712BA12B3E008873B0 /* ChartsViewController.swift in Sources */,
 				0C3FE06F2BA022BF008873B0 /* AuthenticationManager.swift in Sources */,
+				0C3FE0792BA14F9A008873B0 /* InvestmentManagerAPI.swift in Sources */,
 				0C3FE0732BA12B54008873B0 /* MainViewController.swift in Sources */,
 				0C3FE0452BA02142008873B0 /* ContentView.swift in Sources */,
 				0C3FE0432BA02142008873B0 /* CS50_Final_ProjectApp.swift in Sources */,

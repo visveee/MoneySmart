@@ -1,0 +1,9 @@
+CS50-Final-Project
+│   ContentView.swift
+│   MainViewController.swift
+│   ChartsViewController.swift
+│   InvestmentsViewController.swift
+│   AppDelegate.swift
+|   AuthenticationManager.swift
+|   InvestmentManagerAPI.swift
+|   CoreDataEntities.swift

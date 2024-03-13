@@ -224,3 +224,15 @@ class MainViewController: UIViewController {
         deleteExpense(at: 0)
     }
     // Additional IBActions for other user interactions
+
+/*
+ // MARK AND INPUT INTO FINAL CODE — MAIN
+ AlphaVantageAPI.shared.fetchInvestments(symbol: .AAPL, function: .TIME_SERIES_MONTHLY) { result in
+     switch result {
+     case .success(let investments):
+         print("Investments:", investments)
+     case .failure(let error):
+         print("Error:", error)
+     }
+ }
+ */

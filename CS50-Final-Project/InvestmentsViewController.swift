@@ -47,7 +47,6 @@ class InvestmentsViewController: UIViewController {
             }
         }
     }
-    
 }
 
 // MARK: - UITableView DataSource & Delegate
