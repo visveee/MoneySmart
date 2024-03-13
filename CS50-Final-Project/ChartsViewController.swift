@@ -14,19 +14,25 @@ class ChartsViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var lineChartView: LineChartView!
     
+    // MARK: - Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Implement viewDidLoad logic
-        
-        // Configure chart views with data and styling
+        configureUI()
+    }
+    
+    // MARK: - Private Methods
+    
+    private func configureUI() {
         configurePieChart()
         configureLineChart()
     }
     
-    // MARK: - Chart Configuration
-    
     private func configurePieChart() {
-        // Configure pie chart data and styling
+        guard let pieChartView = pieChartView else {
+            return
+        }
+        
         var dataEntries: [PieChartDataEntry] = []
         // Example data entries (replace with your own)
         dataEntries.append(PieChartDataEntry(value: 25.0, label: "Food"))
@@ -34,7 +40,7 @@ class ChartsViewController: UIViewController {
         dataEntries.append(PieChartDataEntry(value: 15.0, label: "Entertainment"))
         dataEntries.append(PieChartDataEntry(value: 40.0, label: "Others"))
         
-        let dataSet = PieChartDataSet(entries: dataEntries, label: nil)
+        let dataSet = PieChartDataSet(entries: dataEntries, label: "")
         dataSet.colors = ChartColorTemplates.joyful()
         
         let data = PieChartData(dataSet: dataSet)
@@ -45,7 +51,10 @@ class ChartsViewController: UIViewController {
     }
     
     private func configureLineChart() {
-        // Configure line chart data and styling
+        guard let lineChartView = lineChartView else {
+            return
+        }
+        
         var dataEntries: [ChartDataEntry] = []
         // Example data entries (replace with your own)
         dataEntries.append(ChartDataEntry(x: 1.0, y: 1000.0))
@@ -62,8 +71,31 @@ class ChartsViewController: UIViewController {
         lineChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .easeInOutBack)
     }
     
-    // Implement methods to populate charts with financial data
+    // MARK: - Actions
     
-    // Implement functionality to display insights based on user's financial data
+    @IBAction func addExpenseButtonTapped(_ sender: UIButton) {
+        // Example of adding an expense
+        addExpense(50.0, category: "Food", note: "Lunch with friends")
+    }
+    
+    @IBAction func deleteExpenseButtonTapped(_ sender: UIButton) {
+        // Example of deleting an expense
+        guard !expenses.isEmpty else {
+            return
+        }
+        deleteExpense(at: 0)
+    }
+    
+    // MARK: - Data Management
+    
+    func addExpense(_ amount: Double, category: String, note: String?) {
+        // Implementation of adding expense
+    }
+    
+    func deleteExpense(at index: Int) {
+        // Implementation of deleting expense
+    }
+    
+    // Additional methods for handling user interactions, navigation, etc.
     
 }

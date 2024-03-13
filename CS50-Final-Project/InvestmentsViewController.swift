@@ -37,7 +37,7 @@ class InvestmentsViewController: UIViewController {
     private func fetchInvestmentData() {
         // Fetch investment data from your backend or local storage
         // Example of fetching data from a hypothetical API
-        APIManager.shared.fetchInvestments { [weak self] result in
+        APIManager.shared.fetchInvestments(context: <#NSManagedObjectContext#>) { [weak self] result in
             switch result {
             case .success(let investments):
                 self?.investments = investments

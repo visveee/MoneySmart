@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import CoreData
 
 class MainViewController: UIViewController {
@@ -73,14 +74,6 @@ class MainViewController: UIViewController {
         return appDelegate.persistentContainer.viewContext
     }()
     
-    // MARK: - Lifecycle Methods
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchInitialData()
-        configureUI()
-    }
-
     
     // MARK: - Private Methods
     
@@ -98,7 +91,7 @@ class MainViewController: UIViewController {
     // MARK: - Expense Tracking
     
     func fetchExpenses() {
-        let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
+        let fetchRequest: NSFetchRequest<Expense> = NSFetchRequest(entityName: "Expense")
         do {
             expenses = try managedObjectContext.fetch(fetchRequest)
         } catch {
@@ -139,7 +132,7 @@ class MainViewController: UIViewController {
     // MARK: - Budget Management
     
     func fetchBudgets() {
-        let fetchRequest: NSFetchRequest<Budget> = Budget.fetchRequest()
+        let fetchRequest: NSFetchRequest<Budget> = NSFetchRequest(entityName: "Budget")
         do {
             budgets = try managedObjectContext.fetch(fetchRequest)
         } catch {
@@ -177,13 +170,14 @@ class MainViewController: UIViewController {
     // MARK: - Income Tracking
     
     func fetchIncomes() {
-        let fetchRequest: NSFetchRequest<Income> = Income.fetchRequest()
+        let fetchRequest: NSFetchRequest<Income> = NSFetchRequest(entityName: "Income")
         do {
             incomes = try managedObjectContext.fetch(fetchRequest)
         } catch {
             print("Error fetching incomes: \(error.localizedDescription)")
         }
     }
+
     
     func addIncome(_ amount: Double, source: String) {
         let newIncome = Income(context: managedObjectContext)
@@ -217,17 +211,16 @@ class MainViewController: UIViewController {
     
     // MARK: - User Interaction Examples
     
-    @IBAction func addExpenseButtonTapped(_ sender: UIButton) {
+    func addExpenseButtonTapped(_ sender: UIButton) {
         // Example of adding an expense
         addExpense(50.0, category: "Food", note: "Lunch with friends")
     }
     
-    @IBAction func deleteExpenseButtonTapped(_ sender: UIButton) {
+    func deleteExpenseButtonTapped(_ sender: UIButton) {
         // Example of deleting an expense
         guard !expenses.isEmpty else {
             return
         }
         deleteExpense(at: 0)
     }
-    
     // Additional IBActions for other user interactions

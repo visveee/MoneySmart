@@ -1,0 +1,6 @@
+framework module Pods_CS50_Final_Project_CS50_Final_ProjectUITests {
+  umbrella header "Pods-CS50-Final-Project-CS50-Final-ProjectUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
